@@ -506,6 +506,36 @@ extension ViewController: NavigationMapViewDelegate {
         
         self.present(waypointRemovalAlertController, animated: true, completion: nil)
     }
+    
+    func navigationMapView(_ navigationMapView: NavigationMapView, routeLineLayerWithIdentifier identifier: String, sourceIdentifier: String) -> LineLayer? {
+        var lineLayer = LineLayer(id: identifier)
+        lineLayer.source = sourceIdentifier
+        lineLayer.paint?.lineColor = identifier.contains("main") ? .constant(.init(color: .red)) : .constant(.init(color: .yellow))
+        lineLayer.paint?.lineWidth = .constant(8.0)
+        lineLayer.layout?.lineJoin = .round
+        lineLayer.layout?.lineCap = .round
+        
+        return lineLayer
+    }
+    
+    func navigationMapView(_ navigationMapView: NavigationMapView, routeCasingLineLayerWithIdentifier identifier: String, sourceIdentifier: String) -> LineLayer? {
+        var lineLayer = LineLayer(id: identifier)
+        lineLayer.source = sourceIdentifier
+        lineLayer.paint?.lineColor = identifier.contains("main") ? .constant(.init(color: .green)) : .constant(.init(color: .blue))
+        lineLayer.paint?.lineWidth = .constant(16.0)
+        lineLayer.layout?.lineJoin = .round
+        lineLayer.layout?.lineCap = .round
+    
+        return lineLayer
+    }
+    
+    func navigationMapView(_ navigationMapView: NavigationMapView, shapeFor route: Route) -> LineString? {
+        return nil
+    }
+    
+    func navigationMapView(_ navigationMapView: NavigationMapView, casingShapeFor route: Route) -> LineString? {
+        return nil
+    }
 }
 
 // MARK: - RouteVoiceControllerDelegate methods
