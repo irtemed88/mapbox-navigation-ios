@@ -20,7 +20,7 @@ open class PassiveLocationDataSource: NSObject {
      */
     public required init(directions: Directions = Directions.shared, systemLocationManager: NavigationLocationManager? = nil) {
         self.directions = directions
-        Navigator.accessToken = directions.credentials.accessToken
+        Navigator.credentials = directions.credentials
 
         self.systemLocationManager = systemLocationManager ?? NavigationLocationManager()
         

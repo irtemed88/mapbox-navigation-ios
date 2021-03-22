@@ -152,7 +152,7 @@ open class RouteController: NSObject {
     
     required public init(along route: Route, routeIndex: Int, options: RouteOptions, directions: Directions = Directions.shared, dataSource source: RouterDataSource) {
         self.directions = directions
-        Navigator.accessToken = directions.credentials.accessToken
+        Navigator.credentials = directions.credentials
         self._routeProgress = RouteProgress(route: route, routeIndex: routeIndex, options: options)
         self.dataSource = source
         self.refreshesRoute = options.profileIdentifier == .automobileAvoidingTraffic && options.refreshingEnabled
