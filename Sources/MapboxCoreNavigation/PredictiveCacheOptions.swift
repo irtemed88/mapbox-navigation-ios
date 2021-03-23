@@ -36,8 +36,7 @@ public struct PredictiveCacheOptions {
     public var maximumConcurrentRequests: UInt32 = 2
     
      /**
-     The Authorization & Authentication credentials that are used for this service. If not specified - will be automatically intialized
-     from the token and host from your app's `info.plist`.
+     The Authorization & Authentication credentials that are used for this service. If not specified - will be automatically intialized from the token and host from your app's `info.plist`.
      */
     public var credentials: DirectionsCredentials = .init()
     

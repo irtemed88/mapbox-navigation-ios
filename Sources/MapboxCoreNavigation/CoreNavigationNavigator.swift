@@ -46,8 +46,7 @@ class Navigator {
     }()
     
     /**
-     The Authorization & Authentication credentials that are used for this service. If not specified - will be automatically intialized
-     from the token and host from your app's `info.plist`.
+     The Authorization & Authentication credentials that are used for this service. If not specified - will be automatically intialized from the token and host from your app's `info.plist`.
      
      - precondition: `credentials` should be set before getting the shared navigator for the first time.
      */
