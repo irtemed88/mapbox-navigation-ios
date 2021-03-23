@@ -573,14 +573,13 @@ private func checkForUpdates() {
 
 private func checkForLocationUsageDescription() {
     #if SWIFT_PACKAGE
-    let bundle = Bundle.module
-    guard let _ = bundle.bundleIdentifier else {
+    return
+    #else
+    guard let _ = Bundle.main.bundleIdentifier else {
         return
     }
-    if bundle.locationWhenInUseUsageDescription == nil && bundle.locationAlwaysAndWhenInUseUsageDescription == nil {
+    if Bundle.main.locationWhenInUseUsageDescription == nil && Bundle.main.locationAlwaysAndWhenInUseUsageDescription == nil {
         preconditionFailure("This application’s Info.plist file must include a NSLocationWhenInUseUsageDescription. See https://developer.apple.com/documentation/corelocation for more information.")
     }
-    #else
-    return
     #endif
 }
