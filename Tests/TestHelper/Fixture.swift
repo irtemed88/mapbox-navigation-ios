@@ -52,14 +52,7 @@ public class Fixture: NSObject {
     }
     
     public class func locations(from name: String) -> [CLLocation] {
-        guard let path = Bundle(for: Fixture.self).path(forResource: name, ofType: "json") else {
-            assert(false, "Fixture \(name) not found.")
-            return []
-        }
-        guard let data = NSData(contentsOfFile: path) as Data? else {
-            assert(false, "No data found at \(path).")
-            return []
-        }
+        let data = JSONFromFileNamed(name: name)
         
         let locations = try! JSONDecoder().decode([Location].self, from: data)
         
