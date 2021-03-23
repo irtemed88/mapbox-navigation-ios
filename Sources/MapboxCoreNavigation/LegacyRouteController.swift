@@ -402,12 +402,17 @@ open class LegacyRouteController: NSObject, Router, InternalRouter, CLLocationMa
     }
 
     private func checkForLocationUsageDescription() {
-        guard let _ = Bundle.main.bundleIdentifier else {
+        #if SWIFT_PACKAGE
+        let bundle = Bundle.module
+        guard let _ = bundle.bundleIdentifier else {
             return
         }
-        if Bundle.main.locationWhenInUseUsageDescription == nil && Bundle.main.locationAlwaysAndWhenInUseUsageDescription == nil {
+        if bundle.locationWhenInUseUsageDescription == nil && bundle.locationAlwaysAndWhenInUseUsageDescription == nil {
             preconditionFailure("This application’s Info.plist file must include a NSLocationWhenInUseUsageDescription. See https://developer.apple.com/documentation/corelocation for more information.")
         }
+        #else
+        return
+        #endif
     }
 
     func updateDistanceToIntersection(from location: CLLocation) {
