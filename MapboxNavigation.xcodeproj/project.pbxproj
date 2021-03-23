@@ -293,6 +293,7 @@
 		B430D2FA25534FDC0088CC23 /* UserHaloCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430D2F925534FDC0088CC23 /* UserHaloCourseView.swift */; };
 		B48CEFC125796FD300696BB3 /* route-for-vanishing-route-line.json in Resources */ = {isa = PBXBuildFile; fileRef = B48CEFAB25796F5A00696BB3 /* route-for-vanishing-route-line.json */; };
 		B4F2BF3C25FAF69500D7AE2E /* NavigationPlotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559FE4E21C3195700B6613F /* NavigationPlotter.swift */; };
+		B4F9FBDF260A61F8008C3D78 /* MapboxCoreNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = C5ADFBCC1DDCC7840011824B /* MapboxCoreNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C51511D120EAC89D00372A91 /* CPMapTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51511D020EAC89D00372A91 /* CPMapTemplate.swift */; };
 		C51DF8661F38C31C006C6A15 /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DF8651F38C31C006C6A15 /* Locale.swift */; };
 		C51FC31720F689F800400CE7 /* CustomStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51FC31620F689F800400CE7 /* CustomStyles.swift */; };
@@ -1818,6 +1819,7 @@
 			files = (
 				3575671E22C53EA400002D95 /* MMEEventsManager+Spy.h in Headers */,
 				35CDA86E2190F2A40072B675 /* TestHelper.h in Headers */,
+				B4F9FBDF260A61F8008C3D78 /* MapboxCoreNavigation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3307,6 +3309,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3343,6 +3346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.TestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
