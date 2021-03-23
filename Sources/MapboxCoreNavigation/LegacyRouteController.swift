@@ -403,14 +403,14 @@ open class LegacyRouteController: NSObject, Router, InternalRouter, CLLocationMa
 
     private func checkForLocationUsageDescription() {
         #if SWIFT_PACKAGE
-        return
-        #else
         guard let _ = Bundle.main.bundleIdentifier else {
             return
         }
         if Bundle.main.locationWhenInUseUsageDescription == nil && Bundle.main.locationAlwaysAndWhenInUseUsageDescription == nil {
             preconditionFailure("This application’s Info.plist file must include a NSLocationWhenInUseUsageDescription. See https://developer.apple.com/documentation/corelocation for more information.")
         }
+        #else
+        return
         #endif
     }
 
