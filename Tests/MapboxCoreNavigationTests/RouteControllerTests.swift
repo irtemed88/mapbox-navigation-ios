@@ -51,7 +51,8 @@ class RouteControllerTests: XCTestCase {
             testCoordinates.append(routeController.location!.coordinate)
         }
         
-        XCTAssert(coordinates == testCoordinates)
+        let expectedCoordinates = locations.map{$0.coordinate}
+        XCTAssert(expectedCoordinates == testCoordinates)
     }
 }
 
